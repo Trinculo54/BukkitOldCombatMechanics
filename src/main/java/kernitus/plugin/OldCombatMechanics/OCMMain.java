@@ -151,14 +151,11 @@ public class OCMMain extends JavaPlugin {
 
         // Module listeners
         ModuleLoader.addModule(new ModuleAttackCooldown(this));
-        ModuleLoader.addModule(new ModulePlayerCollisions(this));
 
         //Listeners registered after with same priority appear to be called later
 
         //These four listen to OCMEntityDamageByEntityEvent:
-        ModuleLoader.addModule(new ModuleOldToolDamage(this));
         ModuleLoader.addModule(new ModuleSwordSweep(this));
-        ModuleLoader.addModule(new ModuleOldPotionEffects(this));
         ModuleLoader.addModule(new ModuleOldCriticalHits(this));
 
         //Next block are all on LOWEST priority, so will be called in the following order:
@@ -168,31 +165,10 @@ public class OCMMain extends JavaPlugin {
         //Then ModuleSwordBlocking to calculate blocking
         ModuleLoader.addModule(new ModuleShieldDamageReduction(this));
         //Then OldArmourStrength to recalculate armour defense accordingly
-        ModuleLoader.addModule(new ModuleOldArmourStrength(this));
 
-        ModuleLoader.addModule(new ModuleSwordBlocking(this));
         ModuleLoader.addModule(new ModuleOldArmourDurability(this));
 
-        ModuleLoader.addModule(new ModuleGoldenApple(this));
-        ModuleLoader.addModule(new ModuleFishingKnockback(this));
-        ModuleLoader.addModule(new ModulePlayerKnockback(this));
-        ModuleLoader.addModule(new ModulePlayerRegen(this));
-
-        ModuleLoader.addModule(new ModuleDisableCrafting(this));
-        ModuleLoader.addModule(new ModuleDisableOffHand(this));
-        ModuleLoader.addModule(new ModuleOldBrewingStand(this));
-        ModuleLoader.addModule(new ModuleDisableElytra(this));
-        ModuleLoader.addModule(new ModuleDisableProjectileRandomness(this));
-        ModuleLoader.addModule(new ModuleDisableBowBoost(this));
-        ModuleLoader.addModule(new ModuleProjectileKnockback(this));
-        ModuleLoader.addModule(new ModuleNoLapisEnchantments(this));
-        ModuleLoader.addModule(new ModuleDisableEnderpearlCooldown(this));
-        ModuleLoader.addModule(new ModuleChorusFruit(this));
-
-        ModuleLoader.addModule(new ModuleAttackSounds(this));
-        ModuleLoader.addModule(new ModuleOldBurnDelay(this));
         ModuleLoader.addModule(new ModuleAttackFrequency(this));
-        ModuleLoader.addModule(new ModuleFishingRodVelocity(this));
     }
 
     private void registerHooks() {
